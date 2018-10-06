@@ -59,7 +59,7 @@ class RandomNumberFetcherTests: XCTestCase {
         }
         
         // Act
-        sut.fetchRandomNumber(min: 1, max: 10) {_,_  in }
+        sut.fetchRandomNumber {_,_  in }
         
         // Assert
         XCTAssertEqual(httpClientSpy.requests.count, 1)
@@ -106,7 +106,7 @@ class RandomNumberFetcherTests: XCTestCase {
         
         var result: Int?
         var responseError: Error?
-        sut.fetchRandomNumber(min: 0, max: 10) { (number, error) in
+        sut.fetchRandomNumber { (number, error) in
             result = number
             responseError = error
         }

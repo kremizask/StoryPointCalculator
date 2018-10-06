@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol RandomNumberFetcherProtocol {
+    func fetchRandomNumber(min: Int, max: Int, completion: @escaping (Int?, Error?) -> Void)
+}
+
 class RandomNumberFetcher {
     
     private let url = URL(string: "https://api.random.org/json-rpc/1/invoke")!
@@ -46,7 +50,7 @@ class RandomNumberFetcher {
         self.httpClient = httpClient
     }
     
-    func fetchRandomNumber(min: Int, max: Int, completion: @escaping (Int?, Error?) -> Void) {
+    func fetchRandomNumber(completion: @escaping (Int?, Error?) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json-rpc", forHTTPHeaderField: "Content-Type")
