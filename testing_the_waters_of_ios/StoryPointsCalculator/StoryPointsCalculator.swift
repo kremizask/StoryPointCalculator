@@ -8,7 +8,11 @@
 
 import Foundation
 
-class StoryPointsCalculator {
+protocol StoryPointsCalculatorProtocol {
+    func calculate(completion: @escaping (Int?, Error?) -> Void)
+}
+
+class StoryPointsCalculator: StoryPointsCalculatorProtocol {
     private let randomFetcher: RandomNumberFetcherProtocol
     
     init(_ randomFetcher: RandomNumberFetcherProtocol) {
