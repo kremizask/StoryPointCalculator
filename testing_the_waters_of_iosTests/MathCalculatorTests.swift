@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Calculator {
+class MathCalculator {
     private var fibMemo = [Int: UInt]()
     
     func fibonacci(_ n: Int) -> UInt {
@@ -24,10 +24,10 @@ class Calculator {
 
 class CalculatorTests: XCTestCase {
     
-    var sut: Calculator!
+    var sut: MathCalculator!
     
     override func setUp() {
-        sut = Calculator()
+        sut = MathCalculator()
         super.setUp()
     }
 
