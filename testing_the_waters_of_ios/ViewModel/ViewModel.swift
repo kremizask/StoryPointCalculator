@@ -12,6 +12,8 @@ class ViewModel {
     
     private let storyPointsCalculator: StoryPointsCalculatorProtocol
     private var labelTextCallback: ((String) -> Void)?
+    private var isButtonEnabledCallback: ((Bool) -> Void)?
+    private var isLoadingCallback: ((Bool) -> Void)?
     private var labelText = "" {
         didSet {
             labelTextCallback?(labelText)
@@ -26,7 +28,15 @@ class ViewModel {
     }
     
     func calculateButtonTapped() {
+        isButtonEnabledCallback?(false)
+        isLoadingCallback?(true)
+        
         storyPointsCalculator.calculate { [weak self] (number, error) in
+            defer {
+                self?.isButtonEnabledCallback?(true)
+                self?.isLoadingCallback?(false)
+            }
+            
             guard
                 let number = number,
                 let strongSelf = self,
@@ -45,6 +55,18 @@ class ViewModel {
         
         // Trigger callback with
         self.labelText = initialLabelText
+    }
+    
+    func isButtonEnabled(updates: @escaping (Bool) -> Void) {
+        isButtonEnabledCallback = updates
+        // initially the button is enabled
+        updates(true)
+    }
+    
+    func isLoading(updates: @escaping (Bool) -> Void) {
+        isLoadingCallback = updates
+        // initially not calculating
+        updates(false)
     }
     
     // MARK: Private

@@ -13,7 +13,7 @@ class ViewModelTests: XCTestCase {
     
     func testCalculateButtonTapRequestsPointCalculation() {
         // Arrange
-        let storyPointCalc = StoryPointsCalculatorFake(storyPoints: 3)
+        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: 3)
         let sut = ViewModel(storyPointCalc)
         
         // Act
@@ -25,7 +25,7 @@ class ViewModelTests: XCTestCase {
     
     func testTheDefaultLabelCopy() {
         // Arrange
-        let storyPointCalc = StoryPointsCalculatorFake(storyPoints: 3)
+        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: 3)
         let sut = ViewModel(storyPointCalc)
         var labelText = ""
         
@@ -40,7 +40,7 @@ class ViewModelTests: XCTestCase {
     
     func testTheLabelCopyAfterTheCalculationForZeroPoints() {
         // Arrange
-        let storyPointCalc = StoryPointsCalculatorFake(storyPoints: 0)
+        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: 0)
         let sut = ViewModel(storyPointCalc)
         var labelText = ""
         
@@ -81,13 +81,37 @@ class ViewModelTests: XCTestCase {
         // Assert
         XCTAssertEqual(labelText, "🤭 It turns out we underestimated the difficulty of calculating story points! Please try again!")
     }
+    
+    func testThatButtonIsDisabledWhileLoading() {
+        assertButtonIsDisabledOnlyWhileLoading { (calculator) in
+            calculator.resolve(with: 3)
+        }
+    }
+    
+    func testThatButtonIsEnabledAgainOnError() {
+        assertButtonIsDisabledOnlyWhileLoading { (calculator) in
+            calculator.resolveWithError()
+        }
+    }
+    
+    func testIsLoadingWhileLoading() {
+        assertIsLoadingOnlyWhileLoading { asyncCalculator in
+            asyncCalculator.resolve(with: 1)
+        }
+    }
+    
+    func testThatButtonStopsLoadingAgainOnError() {
+        assertIsLoadingOnlyWhileLoading { (calculator) in
+            calculator.resolveWithError()
+        }
+    }
 }
 
 // MARK: Helpers
 
 private func assertTextIsCorrectForEasyStories(expectedPoints: Int, file: StaticString = #file, line: UInt = #line) {
     // Arrange
-    let storyPointCalc = StoryPointsCalculatorFake(storyPoints: expectedPoints)
+    let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: expectedPoints)
     let sut = ViewModel(storyPointCalc)
     var labelText = ""
     
@@ -103,7 +127,7 @@ private func assertTextIsCorrectForEasyStories(expectedPoints: Int, file: Static
 
 private func assertTextIsCorrectForBigStories(expectedPoints: Int, file: StaticString = #file, line: UInt = #line) {
     // Arrange
-    let storyPointCalc = StoryPointsCalculatorFake(storyPoints: expectedPoints)
+    let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: expectedPoints)
     let sut = ViewModel(storyPointCalc)
     var labelText = ""
     
@@ -117,7 +141,56 @@ private func assertTextIsCorrectForBigStories(expectedPoints: Int, file: StaticS
     XCTAssertEqual(labelText, "Wow! I think it's a \(expectedPoints)! Maybe we should break this down into more stories?", file: file, line: line)
 }
 
-class StoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
+private func assertButtonIsDisabledOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorFake) -> Void) {
+    let calculator = AsynchronousStoryPointsCalculatorFake()
+    let sut = ViewModel(calculator)
+    var isButtonEnabled = true
+    sut.isButtonEnabled { (isEnabled) in
+        isButtonEnabled = isEnabled
+    }
+    
+    XCTAssertTrue(isButtonEnabled)
+    
+    // Act
+    sut.calculateButtonTapped()
+    
+    // Assert
+    XCTAssertFalse(isButtonEnabled)
+    
+    // Step after assert? Quite sure this is not best practise. Not sure how to do this elegantly without BDD scopes
+    
+    
+    resolveAction(calculator)
+    
+    // Assert... again
+    XCTAssertTrue(isButtonEnabled)
+}
+
+private func assertIsLoadingOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorFake) -> Void) {
+    // Arrange
+    let asyncCalculator = AsynchronousStoryPointsCalculatorFake()
+    let sut = ViewModel(asyncCalculator)
+    var isLoading: Bool = false
+    
+    sut.isLoading { (loading) in
+        isLoading = loading
+    }
+    
+    XCTAssertFalse(isLoading)
+    
+    // Act
+    sut.calculateButtonTapped()
+    
+    XCTAssertTrue(isLoading)
+    
+    // Response comes
+    resolveAction(asyncCalculator)
+    
+    XCTAssertFalse(isLoading)
+}
+
+
+class SynchronousStoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
     private let storyPoints: Int
     
     public init(storyPoints: Int) {
@@ -129,6 +202,23 @@ class StoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
     func calculate(completion: @escaping (Int?, Error?) -> Void) {
         requestedCalculation = true
         completion(storyPoints, nil)
+    }
+}
+
+class AsynchronousStoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
+    
+    var requestedCalculationCompletion: ((Int?, Error?) -> Void)?
+    
+    func calculate(completion: @escaping (Int?, Error?) -> Void) {
+        requestedCalculationCompletion = completion
+    }
+    
+    func resolve(with number: Int) {
+        requestedCalculationCompletion?(number, nil)
+    }
+    
+    func resolveWithError() {
+        requestedCalculationCompletion?(nil, RandomNumberFetcher.genericError)
     }
 }
 
