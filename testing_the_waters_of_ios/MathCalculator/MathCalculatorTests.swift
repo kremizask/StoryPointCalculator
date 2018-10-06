@@ -39,6 +39,30 @@ class MathCalculatorTests: XCTestCase {
         assertFibonacci(2, is: 0 + 1)
     }
     
+    func test4thFibbonacci() {
+        assertFibonacci(3, is: 2)
+    }
+    
+    func test5thFibbonacci() {
+        assertFibonacci(4, is: 3)
+    }
+    
+    func test6thFibbonacci() {
+        assertFibonacci(5, is: 5)
+    }
+    
+    func test7thFibbonacci() {
+        assertFibonacci(6, is: 8)
+    }
+    
+    func test8thFibbonacci() {
+        assertFibonacci(7, is: 13)
+    }
+    
+    func test9thFibbonacci() {
+        assertFibonacci(8, is: 21)
+    }
+    
     func testFibonacciPerformance() {
         measure {
             _ = sut.fibonacci(30)
