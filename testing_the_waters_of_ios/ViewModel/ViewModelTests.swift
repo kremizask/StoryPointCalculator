@@ -38,6 +38,21 @@ class ViewModelTests: XCTestCase {
         XCTAssertEqual(labelText, "Estimates are damn hard! Right? Let us do the math for you!")
     }
     
+    func testTheLabelCopyAfterTheCalculationForZeroPoints() {
+        // Arrange
+        let storyPointCalc = StoryPointsCalculatorFake(storyPoints: 0)
+        let sut = ViewModel(storyPointCalc)
+        var labelText = ""
+        
+        sut.labelText { (text) in
+            labelText = text
+        }
+        
+        // Act
+        sut.calculateButtonTapped()
+        
+        XCTAssertEqual(labelText, "Done! What's next?")
+    }
     
     func testTheLabelCopyAfterTheCalculationForSmallStories() {
         assertTextIsCorrectForEasyStories(expectedPoints: 1)

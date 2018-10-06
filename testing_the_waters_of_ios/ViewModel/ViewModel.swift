@@ -50,8 +50,17 @@ class ViewModel {
     // MARK: Private
     
     private func labelText(forPoints points: Int) -> String {
+        let zeroPointsText = NSLocalizedString("Done! What's next?", comment: "Zero points text")
         let smallStoriesText = String.localizedStringWithFormat("This story is a definite %d pointer! I double checked!", points)
         let bigStoriesText = String.localizedStringWithFormat("Wow! I think it's a %d! Maybe we should break this down into more stories?", points)
-        return (points > 5) ? bigStoriesText : smallStoriesText
+        
+        switch points {
+        case (...0):
+            return zeroPointsText
+        case (1...5):
+            return smallStoriesText
+        default:
+            return bigStoriesText
+        }
     }
 }
