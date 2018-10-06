@@ -9,20 +9,6 @@
 import XCTest
 @testable import testing_the_waters_of_ios
 
-class StoryPointsCalculator {
-    private let randomFetcher: RandomNumberFetcherProtocol
-    
-    init(_ randomFetcher: RandomNumberFetcherProtocol) {
-        self.randomFetcher = randomFetcher
-    }
-    
-    func calculate(completion: @escaping (Int?, Error?) -> Void) {
-        randomFetcher.fetchRandomNumber { (randomNumber, error) in
-            completion(randomNumber.map(MathCalculator().fibonacci), error)
-        }
-    }
-}
-
 class RandomFetcherFake: RandomNumberFetcherProtocol {
     let result: Int
     var numberRequested = false

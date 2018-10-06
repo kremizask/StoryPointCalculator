@@ -21,6 +21,7 @@
 		29F7A60A2169306700417BAF /* RandomNumberFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A5F62168E5D000417BAF /* RandomNumberFetcherTests.swift */; };
 		29F7A60D216930AB00417BAF /* MathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A60C216930AB00417BAF /* MathCalculator.swift */; };
 		29F7A6102169323F00417BAF /* StoryPointsCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A60F2169323F00417BAF /* StoryPointsCalculatorTests.swift */; };
+		29F7A61221693E1B00417BAF /* StoryPointsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A61121693E1B00417BAF /* StoryPointsCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		29F7A5FE21692E0900417BAF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		29F7A60C216930AB00417BAF /* MathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathCalculator.swift; sourceTree = "<group>"; };
 		29F7A60F2169323F00417BAF /* StoryPointsCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPointsCalculatorTests.swift; sourceTree = "<group>"; };
+		29F7A61121693E1B00417BAF /* StoryPointsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPointsCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		29F7A60E2169321100417BAF /* StoryPointsCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				29F7A61121693E1B00417BAF /* StoryPointsCalculator.swift */,
 				29F7A60F2169323F00417BAF /* StoryPointsCalculatorTests.swift */,
 			);
 			path = StoryPointsCalculator;
@@ -250,6 +253,7 @@
 				290E73192157BD7A00EF9408 /* AppDelegate.swift in Sources */,
 				29F7A60D216930AB00417BAF /* MathCalculator.swift in Sources */,
 				290E733D2157CD9200EF9408 /* main.swift in Sources */,
+				29F7A61221693E1B00417BAF /* StoryPointsCalculator.swift in Sources */,
 				29F7A5FD21691C8700417BAF /* RandomNumberFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
