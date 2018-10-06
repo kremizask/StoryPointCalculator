@@ -9,22 +9,7 @@
 import XCTest
 @testable import testing_the_waters_of_ios
 
-class RandomFetcherFake: RandomNumberFetcherProtocol {
-    let result: Int
-    var numberRequested = false
-    
-    public init(result: Int) {
-        self.result = result
-    }
-    
-    func fetchRandomNumber(completion: @escaping (Int?, Error?) -> Void) {
-        numberRequested = true
-        completion(result, nil)
-    }
-}
-
 class StoryPointsCalculatorTests: XCTestCase {
-    
     func testThatCalculeRequestsRandomNumberAndReturnsTheCorrespondingFibonacci() {
         
         // Arrange
@@ -44,5 +29,19 @@ class StoryPointsCalculatorTests: XCTestCase {
         XCTAssertTrue(randomFetcher.numberRequested)
         XCTAssertNil(error)
         XCTAssertEqual(points, MathCalculator().fibonacci(5))
+    }
+}
+
+class RandomFetcherFake: RandomNumberFetcherProtocol {
+    let result: Int
+    var numberRequested = false
+    
+    public init(result: Int) {
+        self.result = result
+    }
+    
+    func fetchRandomNumber(completion: @escaping (Int?, Error?) -> Void) {
+        numberRequested = true
+        completion(result, nil)
     }
 }
