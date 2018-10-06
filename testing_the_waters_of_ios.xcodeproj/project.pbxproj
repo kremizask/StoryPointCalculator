@@ -15,6 +15,7 @@
 		290E732E2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E732D2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift */; };
 		290E733B2157C94800EF9408 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E733A2157C94800EF9408 /* TestingAppDelegate.swift */; };
 		290E733D2157CD9200EF9408 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E733C2157CD9200EF9408 /* main.swift */; };
+		29CFF4AD21641E7500A277AB /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CFF4AC21641E7500A277AB /* CalculatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		290E732F2157BD7A00EF9408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		290E733A2157C94800EF9408 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		290E733C2157CD9200EF9408 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		29CFF4AC21641E7500A277AB /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				290E732D2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift */,
+				29CFF4AC21641E7500A277AB /* CalculatorTests.swift */,
 				290E732F2157BD7A00EF9408 /* Info.plist */,
 				290E733A2157C94800EF9408 /* TestingAppDelegate.swift */,
 			);
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				290E732E2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift in Sources */,
+				29CFF4AD21641E7500A277AB /* CalculatorTests.swift in Sources */,
 				290E733B2157C94800EF9408 /* TestingAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
