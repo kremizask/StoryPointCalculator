@@ -18,6 +18,7 @@
 		29CFF4AD21641E7500A277AB /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CFF4AC21641E7500A277AB /* CalculatorTests.swift */; };
 		29F7A5F72168E5D000417BAF /* RandomNumberFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A5F62168E5D000417BAF /* RandomNumberFetcherTests.swift */; };
 		29F7A5FD21691C8700417BAF /* RandomNumberFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A5FC21691C8700417BAF /* RandomNumberFetcher.swift */; };
+		29F7A5FF21692E0900417BAF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A5FE21692E0900417BAF /* HttpClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		29CFF4AC21641E7500A277AB /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
 		29F7A5F62168E5D000417BAF /* RandomNumberFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberFetcherTests.swift; sourceTree = "<group>"; };
 		29F7A5FC21691C8700417BAF /* RandomNumberFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberFetcher.swift; sourceTree = "<group>"; };
+		29F7A5FE21692E0900417BAF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				290E733C2157CD9200EF9408 /* main.swift */,
 				290E73182157BD7A00EF9408 /* AppDelegate.swift */,
 				290E731A2157BD7A00EF9408 /* ViewController.swift */,
+				29F7A5FE21692E0900417BAF /* HttpClient.swift */,
 				29F7A5FC21691C8700417BAF /* RandomNumberFetcher.swift */,
 				290E731C2157BD7A00EF9408 /* Main.storyboard */,
 				290E731F2157BD7A00EF9408 /* Assets.xcassets */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F7A5FF21692E0900417BAF /* HttpClient.swift in Sources */,
 				290E731B2157BD7A00EF9408 /* ViewController.swift in Sources */,
 				290E73192157BD7A00EF9408 /* AppDelegate.swift in Sources */,
 				290E733D2157CD9200EF9408 /* main.swift in Sources */,

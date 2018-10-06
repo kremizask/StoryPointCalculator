@@ -8,12 +8,6 @@
 
 import Foundation
 
-protocol HttpClient {
-    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
-}
-
-extension URLSession: HttpClient {}
-
 class RandomNumberFetcher {
     
     private let url = URL(string: "https://api.random.org/json-rpc/1/invoke")!
