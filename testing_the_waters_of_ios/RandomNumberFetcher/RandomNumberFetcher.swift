@@ -9,10 +9,10 @@
 import Foundation
 
 protocol RandomNumberFetcherProtocol {
-    func fetchRandomNumber(min: Int, max: Int, completion: @escaping (Int?, Error?) -> Void)
+    func fetchRandomNumber(completion: @escaping (Int?, Error?) -> Void)
 }
 
-class RandomNumberFetcher {
+class RandomNumberFetcher: RandomNumberFetcherProtocol {
     
     private let url = URL(string: "https://api.random.org/json-rpc/1/invoke")!
     private let httpClient: HttpClient

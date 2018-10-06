@@ -20,6 +20,7 @@
 		29F7A5FF21692E0900417BAF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A5FE21692E0900417BAF /* HttpClient.swift */; };
 		29F7A60A2169306700417BAF /* RandomNumberFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A5F62168E5D000417BAF /* RandomNumberFetcherTests.swift */; };
 		29F7A60D216930AB00417BAF /* MathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A60C216930AB00417BAF /* MathCalculator.swift */; };
+		29F7A6102169323F00417BAF /* StoryPointsCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A60F2169323F00417BAF /* StoryPointsCalculatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		29F7A5FC21691C8700417BAF /* RandomNumberFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberFetcher.swift; sourceTree = "<group>"; };
 		29F7A5FE21692E0900417BAF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		29F7A60C216930AB00417BAF /* MathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathCalculator.swift; sourceTree = "<group>"; };
+		29F7A60F2169323F00417BAF /* StoryPointsCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPointsCalculatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				290E73182157BD7A00EF9408 /* AppDelegate.swift */,
 				290E731A2157BD7A00EF9408 /* ViewController.swift */,
 				29F7A5FE21692E0900417BAF /* HttpClient.swift */,
+				29F7A60E2169321100417BAF /* StoryPointsCalculator */,
 				29F7A60B2169307E00417BAF /* MathCalculator */,
 				29F7A6082169302F00417BAF /* RandomNumberFetcher */,
 				290E731C2157BD7A00EF9408 /* Main.storyboard */,
@@ -131,6 +134,14 @@
 				29CFF4AC21641E7500A277AB /* MathCalculatorTests.swift */,
 			);
 			path = MathCalculator;
+			sourceTree = "<group>";
+		};
+		29F7A60E2169321100417BAF /* StoryPointsCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				29F7A60F2169323F00417BAF /* StoryPointsCalculatorTests.swift */,
+			);
+			path = StoryPointsCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +261,7 @@
 				290E732E2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift in Sources */,
 				29CFF4AD21641E7500A277AB /* MathCalculatorTests.swift in Sources */,
 				290E733B2157C94800EF9408 /* TestingAppDelegate.swift in Sources */,
+				29F7A6102169323F00417BAF /* StoryPointsCalculatorTests.swift in Sources */,
 				29F7A60A2169306700417BAF /* RandomNumberFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

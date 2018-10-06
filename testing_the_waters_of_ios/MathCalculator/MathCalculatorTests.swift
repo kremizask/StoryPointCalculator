@@ -23,8 +23,8 @@ class MathCalculatorTests: XCTestCase {
         super.tearDown()
     }
 
-    private func assertFibonacci(_ input: Int, is expectedValue: UInt, file: StaticString = #file, line: UInt = #line) {
-        XCTAssertEqual(sut.fibonacci(input), expectedValue, file: file, line: line)
+    private func assertFibonacci(_ input: Int, is expectedValue: Int, file: StaticString = #file, line: Int = #line) {
+        XCTAssertEqual(sut.fibonacci(input), expectedValue, file: file, line: UInt(line))
     }
     
     func test1stFibonacci() {
