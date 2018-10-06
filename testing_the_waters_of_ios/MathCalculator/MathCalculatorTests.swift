@@ -7,22 +7,9 @@
 //
 
 import XCTest
+@testable import testing_the_waters_of_ios
 
-class MathCalculator {
-    private var fibMemo = [Int: UInt]()
-    
-    func fibonacci(_ n: Int) -> UInt {
-        if let knownFib = fibMemo[n] {
-            return knownFib
-        }
-        
-        let result = (n <= 1) ? UInt(n) : fibonacci(n-1) + fibonacci(n-2)
-        fibMemo[n] = result
-        return result
-    }
-}
-
-class CalculatorTests: XCTestCase {
+class MathCalculatorTests: XCTestCase {
     
     var sut: MathCalculator!
     
@@ -54,7 +41,7 @@ class CalculatorTests: XCTestCase {
     
     func testFibonacciPerformance() {
         measure {
-            _ = sut.fibonacci(93)
+            _ = sut.fibonacci(30)
         }
     }
 }
