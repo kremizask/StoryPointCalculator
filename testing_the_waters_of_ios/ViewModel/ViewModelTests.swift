@@ -24,6 +24,12 @@ class StoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
     }
 }
 
+class ErroringStoryPointsCalculator: StoryPointsCalculatorProtocol {
+    func calculate(completion: @escaping (Int?, Error?) -> Void) {
+        completion(nil, RandomNumberFetcher.genericError)
+    }
+}
+
 class ViewModel {
     
     private let storyPointsCalculator: StoryPointsCalculatorProtocol
@@ -43,6 +49,7 @@ class ViewModel {
     func calculateButtonTapped() {
         storyPointsCalculator.calculate { [weak self] (number, error) in
             guard let number = number, error == nil else {
+                self?.labelText = NSLocalizedString("🤭 It turns out we underestimated the difficulty of calculating story points! Please try again!", comment: "Error Text")
                 return
             }
             
@@ -102,6 +109,21 @@ class ViewModelTests: XCTestCase {
         assertTextIsCorrectForBigStories(expectedPoints: 8)
         assertTextIsCorrectForBigStories(expectedPoints: 13)
         assertTextIsCorrectForBigStories(expectedPoints: 21)
+    }
+    
+    func testTheTextOnError() {
+        // Arrange
+        let sut = ViewModel(ErroringStoryPointsCalculator())
+        var labelText = ""
+        sut.labelText { (text) in
+            labelText = text
+        }
+        
+        // Act
+        sut.calculateButtonTapped()
+        
+        // Assert
+        XCTAssertEqual(labelText, "🤭 It turns out we underestimated the difficulty of calculating story points! Please try again!")
     }
 }
 

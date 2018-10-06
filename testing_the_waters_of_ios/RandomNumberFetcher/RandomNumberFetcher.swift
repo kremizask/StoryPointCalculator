@@ -14,6 +14,9 @@ protocol RandomNumberFetcherProtocol {
 
 class RandomNumberFetcher: RandomNumberFetcherProtocol {
     
+    // We are going to handle all errors the same way for the purposes of this app
+    static let genericError = NSError(domain: "com.storypointscalculator", code: 1, userInfo: nil)
+    
     private let url = URL(string: "https://api.random.org/json-rpc/1/invoke")!
     private let httpClient: HttpClient
     private let apiVersion = "2.0"
@@ -73,7 +76,7 @@ class RandomNumberFetcher: RandomNumberFetcherProtocol {
                     .decode(Response.self, from: responseData),
                 let number = response.result.numbers.first
             else {
-                completion(nil, NSError(domain: "com.storypointscalculator", code: 1, userInfo: nil))
+                completion(nil, RandomNumberFetcher.genericError)
                 return
             }
             
