@@ -16,6 +16,7 @@
 		290E733B2157C94800EF9408 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E733A2157C94800EF9408 /* TestingAppDelegate.swift */; };
 		290E733D2157CD9200EF9408 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E733C2157CD9200EF9408 /* main.swift */; };
 		29CFF4AD21641E7500A277AB /* MathCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CFF4AC21641E7500A277AB /* MathCalculatorTests.swift */; };
+		29DBC9A4216A344800BEEB14 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBC9A3216A344800BEEB14 /* ViewControllerTests.swift */; };
 		29F7A5FD21691C8700417BAF /* RandomNumberFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A5FC21691C8700417BAF /* RandomNumberFetcher.swift */; };
 		29F7A5FF21692E0900417BAF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A5FE21692E0900417BAF /* HttpClient.swift */; };
 		29F7A60A2169306700417BAF /* RandomNumberFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A5F62168E5D000417BAF /* RandomNumberFetcherTests.swift */; };
@@ -52,6 +53,7 @@
 		290E733A2157C94800EF9408 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		290E733C2157CD9200EF9408 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		29CFF4AC21641E7500A277AB /* MathCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathCalculatorTests.swift; sourceTree = "<group>"; };
+		29DBC9A3216A344800BEEB14 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		29F7A5F62168E5D000417BAF /* RandomNumberFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberFetcherTests.swift; sourceTree = "<group>"; };
 		29F7A5FC21691C8700417BAF /* RandomNumberFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberFetcher.swift; sourceTree = "<group>"; };
 		29F7A5FE21692E0900417BAF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				290E731A2157BD7A00EF9408 /* ViewController.swift */,
+				29DBC9A3216A344800BEEB14 /* ViewControllerTests.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				29F7A61B21697B6200417BAF /* RandomNumberResponseTests.swift in Sources */,
 				290E733B2157C94800EF9408 /* TestingAppDelegate.swift in Sources */,
 				29F7A6102169323F00417BAF /* StoryPointsCalculatorTests.swift in Sources */,
+				29DBC9A4216A344800BEEB14 /* ViewControllerTests.swift in Sources */,
 				29F7A60A2169306700417BAF /* RandomNumberFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

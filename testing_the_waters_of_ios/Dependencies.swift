@@ -21,7 +21,7 @@ struct Dependencies {
         return StoryPointsCalculator(makeRandomNumberFetcher())
     }
     
-    static func makeViewModel() -> ViewModel {
+    static func makeViewModel() -> ViewModelProtocol {
         return ViewModel(makeStoryPointsCalculator())
     }
 }

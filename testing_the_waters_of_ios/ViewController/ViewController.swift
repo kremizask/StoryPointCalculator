@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     
-    var viewModel: ViewModel!
+    var viewModel: ViewModelProtocol!
     
-    func configure(_ viewModel: ViewModel) {
+    func configure(_ viewModel: ViewModelProtocol) {
         self.viewModel = viewModel
     }
 

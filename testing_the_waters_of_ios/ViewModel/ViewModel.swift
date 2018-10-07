@@ -8,7 +8,14 @@
 
 import Foundation
 
-class ViewModel {
+protocol ViewModelProtocol {
+    func calculateButtonTapped()
+    func labelText(updates: @escaping (String) -> Void)
+    func isButtonEnabled(updates: @escaping (Bool) -> Void)
+    func isLoading(updates: @escaping (Bool) -> Void)
+}
+
+class ViewModel: ViewModelProtocol {
     
     private let storyPointsCalculator: StoryPointsCalculatorProtocol
     private var labelTextCallback: ((String) -> Void)?
