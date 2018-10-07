@@ -106,7 +106,7 @@
 				290E733C2157CD9200EF9408 /* main.swift */,
 				290E73182157BD7A00EF9408 /* AppDelegate.swift */,
 				29F7A618216974F600417BAF /* Dependencies.swift */,
-				290E731A2157BD7A00EF9408 /* ViewController.swift */,
+				2979C02A216A1D4800230000 /* ViewController */,
 				29F7A5FE21692E0900417BAF /* HttpClient.swift */,
 				29F7A61321693E7600417BAF /* ViewModel */,
 				29F7A60E2169321100417BAF /* StoryPointsCalculator */,
@@ -128,6 +128,14 @@
 				290E733A2157C94800EF9408 /* TestingAppDelegate.swift */,
 			);
 			path = testing_the_waters_of_iosTests;
+			sourceTree = "<group>";
+		};
+		2979C02A216A1D4800230000 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				290E731A2157BD7A00EF9408 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		29F7A6082169302F00417BAF /* RandomNumberFetcher */ = {

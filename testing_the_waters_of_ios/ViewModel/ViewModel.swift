@@ -14,27 +14,40 @@ class ViewModel {
     private var labelTextCallback: ((String) -> Void)?
     private var isButtonEnabledCallback: ((Bool) -> Void)?
     private var isLoadingCallback: ((Bool) -> Void)?
+    private var isLoading = false {
+        didSet {
+            dispatchQueue.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.isButtonEnabledCallback?(!strongSelf.isLoading)
+                strongSelf.isLoadingCallback?(strongSelf.isLoading)
+            }
+        }
+    }
+    
     private var labelText = "" {
         didSet {
-            labelTextCallback?(labelText)
+            dispatchQueue.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.labelTextCallback?(strongSelf.labelText)
+            }
         }
     }
     
     private let initialLabelText = NSLocalizedString("Estimates are damn hard! Right? Let us do the math for you!", comment: "Default label text")
     private static let errorText = NSLocalizedString("🤭 It turns out we underestimated the difficulty of calculating story points! Please try again!", comment: "Error Text")
+    private let dispatchQueue: DispatchQueue
     
-    public init(_ storyPointsCalculator: StoryPointsCalculatorProtocol) {
+    public init(_ storyPointsCalculator: StoryPointsCalculatorProtocol, _ dispatchQueue: DispatchQueue = DispatchQueue.main) {
         self.storyPointsCalculator = storyPointsCalculator
+        self.dispatchQueue = dispatchQueue
     }
     
     func calculateButtonTapped() {
-        isButtonEnabledCallback?(false)
-        isLoadingCallback?(true)
+        isLoading = true
         
         storyPointsCalculator.calculate { [weak self] (number, error) in
             defer {
-                self?.isButtonEnabledCallback?(true)
-                self?.isLoadingCallback?(false)
+                self?.isLoading = false
             }
             
             guard

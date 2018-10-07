@@ -28,25 +28,21 @@ class ViewController: UIViewController {
     
     private func bindViewModel() {
         viewModel.isLoading { [weak self] (isLoading) in
-            DispatchQueue.main.async {
-                if isLoading {
-                    self?.activityIndicator.startAnimating()
-                } else {
-                    self?.activityIndicator.stopAnimating()
-                }
+            // Already in main queue
+            if isLoading {
+                self?.activityIndicator.startAnimating()
+            } else {
+                self?.activityIndicator.stopAnimating()
             }
         }
         
         viewModel.isButtonEnabled { [weak self] (isEnabled) in
-            DispatchQueue.main.async {
-                self?.calculateButton.isEnabled = isEnabled
-            }
+            // Already in main queue
+            self?.calculateButton.isEnabled = isEnabled
         }
         
         viewModel.labelText { [weak self] (text) in
-            DispatchQueue.main.async {
-                self?.label.text = text
-            }
+            self?.label.text = text
         }
     }
     

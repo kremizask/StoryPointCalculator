@@ -30,11 +30,14 @@ class ViewModelTests: XCTestCase {
         var labelText = ""
         
         // Act
+        let expectation = self.expectation(description: "getting initial text")
         sut.labelText { text in
             labelText = text
+            expectation.fulfill()
         }
         
         // Assert
+        waitForExpectations(timeout: 1, handler: nil)
         XCTAssertEqual(labelText, "Estimates are damn hard! Right? Let us do the math for you!")
     }
     
@@ -44,13 +47,22 @@ class ViewModelTests: XCTestCase {
         let sut = ViewModel(storyPointCalc)
         var labelText = ""
         
+        var expectation = self.expectation(description: "getting initial text")
+
         sut.labelText { (text) in
             labelText = text
+            expectation.fulfill()
         }
         
+        waitForExpectations(timeout: 1, handler: nil)
         // Act
+        
+        expectation = self.expectation(description: "getting udpated text")
+
         sut.calculateButtonTapped()
         
+        waitForExpectations(timeout: 1, handler: nil)
+
         XCTAssertEqual(labelText, "Done! What's next?")
     }
     
@@ -71,12 +83,19 @@ class ViewModelTests: XCTestCase {
         // Arrange
         let sut = ViewModel(ErroringStoryPointsCalculator())
         var labelText = ""
+        var expectation = self.expectation(description: "getting initial text")
         sut.labelText { (text) in
             labelText = text
+            expectation.fulfill()
         }
         
+        waitForExpectations(timeout: 1, handler: nil)
+        expectation = self.expectation(description: "getting updated text")
+
         // Act
         sut.calculateButtonTapped()
+        
+        waitForExpectations(timeout: 1, handler: nil)
         
         // Assert
         XCTAssertEqual(labelText, "🤭 It turns out we underestimated the difficulty of calculating story points! Please try again!")
@@ -105,90 +124,127 @@ class ViewModelTests: XCTestCase {
             calculator.resolveWithError()
         }
     }
-}
-
-// MARK: Helpers
-
-private func assertTextIsCorrectForEasyStories(expectedPoints: Int, file: StaticString = #file, line: UInt = #line) {
-    // Arrange
-    let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: expectedPoints)
-    let sut = ViewModel(storyPointCalc)
-    var labelText = ""
     
-    sut.labelText { (text) in
-        labelText = text
+    // MARK: Helpers
+    
+    private func assertTextIsCorrectForEasyStories(expectedPoints: Int, file: StaticString = #file, line: UInt = #line) {
+        // Arrange
+        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: expectedPoints)
+        let sut = ViewModel(storyPointCalc)
+        var labelText = ""
+        
+        var expectation = self.expectation(description: "getting initial text")
+        
+        sut.labelText { (text) in
+            labelText = text
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        
+        // Act
+        expectation = self.expectation(description: "getting updated text")
+        sut.calculateButtonTapped()
+        
+
+        waitForExpectations(timeout: 1, handler: nil)
+
+        XCTAssertEqual(labelText, "This story is a definite \(expectedPoints) pointer! I double checked!", file: file, line: line)
     }
     
-    // Act
-    sut.calculateButtonTapped()
-    
-    XCTAssertEqual(labelText, "This story is a definite \(expectedPoints) pointer! I double checked!", file: file, line: line)
-}
+    private func assertTextIsCorrectForBigStories(expectedPoints: Int, file: StaticString = #file, line: UInt = #line) {
+        // Arrange
+        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: expectedPoints)
+        let sut = ViewModel(storyPointCalc)
+        var labelText = ""
+        
+        var expectation = self.expectation(description: "getting initial text")
 
-private func assertTextIsCorrectForBigStories(expectedPoints: Int, file: StaticString = #file, line: UInt = #line) {
-    // Arrange
-    let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: expectedPoints)
-    let sut = ViewModel(storyPointCalc)
-    var labelText = ""
-    
-    sut.labelText { (text) in
-        labelText = text
+        sut.labelText { (text) in
+            labelText = text
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        expectation = self.expectation(description: "getting updated text")
+        
+        // Act
+        sut.calculateButtonTapped()
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        
+        XCTAssertEqual(labelText, "Wow! I think it's a \(expectedPoints)! Maybe we should break this down into more stories?", file: file, line: line)
     }
     
-    // Act
-    sut.calculateButtonTapped()
-    
-    XCTAssertEqual(labelText, "Wow! I think it's a \(expectedPoints)! Maybe we should break this down into more stories?", file: file, line: line)
-}
-
-private func assertButtonIsDisabledOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorFake) -> Void) {
-    let calculator = AsynchronousStoryPointsCalculatorFake()
-    let sut = ViewModel(calculator)
-    var isButtonEnabled = true
-    sut.isButtonEnabled { (isEnabled) in
-        isButtonEnabled = isEnabled
+    private func assertButtonIsDisabledOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorFake) -> Void) {
+        let calculator = AsynchronousStoryPointsCalculatorFake()
+        
+        // Injecting serial queue in order to be able to make
+        // async code sync for our tests
+        let queue = DispatchQueue(label: "isLoading")
+        let sut = ViewModel(calculator, queue)
+        var isButtonEnabled = true
+        sut.isButtonEnabled { (isEnabled) in
+            isButtonEnabled = isEnabled
+        }
+        
+        // By doing this we are actually waiting for the
+        // serial queue to execute any pending work and then
+        // move on to the assertion
+        queue.sync {}
+        
+        XCTAssertTrue(isButtonEnabled)
+        
+        // Act
+        sut.calculateButtonTapped()
+        
+        queue.sync {}
+        
+        // Assert
+        XCTAssertFalse(isButtonEnabled)
+        
+        // Step after assert? Quite sure this is not best practise. Not sure how to do this elegantly without BDD scopes
+        
+        
+        resolveAction(calculator)
+        
+        queue.sync {}
+        
+        // Assert... again
+        XCTAssertTrue(isButtonEnabled)
     }
     
-    XCTAssertTrue(isButtonEnabled)
-    
-    // Act
-    sut.calculateButtonTapped()
-    
-    // Assert
-    XCTAssertFalse(isButtonEnabled)
-    
-    // Step after assert? Quite sure this is not best practise. Not sure how to do this elegantly without BDD scopes
-    
-    
-    resolveAction(calculator)
-    
-    // Assert... again
-    XCTAssertTrue(isButtonEnabled)
-}
-
-private func assertIsLoadingOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorFake) -> Void) {
-    // Arrange
-    let asyncCalculator = AsynchronousStoryPointsCalculatorFake()
-    let sut = ViewModel(asyncCalculator)
-    var isLoading: Bool = false
-    
-    sut.isLoading { (loading) in
-        isLoading = loading
+    private func assertIsLoadingOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorFake) -> Void) {
+        // Arrange
+        let asyncCalculator = AsynchronousStoryPointsCalculatorFake()
+        let queue = DispatchQueue(label: "isLoading")
+        let sut = ViewModel(asyncCalculator, queue)
+        var isLoading: Bool = false
+        
+        sut.isLoading { (loading) in
+            isLoading = loading
+        }
+        
+        queue.sync {}
+        
+        XCTAssertFalse(isLoading)
+        
+        // Act
+        sut.calculateButtonTapped()
+        
+        queue.sync {}
+        
+        XCTAssertTrue(isLoading)
+        
+        // Response comes
+        resolveAction(asyncCalculator)
+        
+        queue.sync {}
+        
+        XCTAssertFalse(isLoading)
     }
-    
-    XCTAssertFalse(isLoading)
-    
-    // Act
-    sut.calculateButtonTapped()
-    
-    XCTAssertTrue(isLoading)
-    
-    // Response comes
-    resolveAction(asyncCalculator)
-    
-    XCTAssertFalse(isLoading)
-}
 
+}
 
 class SynchronousStoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
     private let storyPoints: Int
