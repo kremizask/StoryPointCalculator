@@ -25,6 +25,7 @@
 		29F7A61521693F1200417BAF /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A61421693F1200417BAF /* ViewModelTests.swift */; };
 		29F7A61721695D9E00417BAF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A61621695D9E00417BAF /* ViewModel.swift */; };
 		29F7A619216974F600417BAF /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A618216974F600417BAF /* Dependencies.swift */; };
+		29F7A61B21697B6200417BAF /* RandomNumberResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A61A21697B6200417BAF /* RandomNumberResponseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		29F7A61421693F1200417BAF /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		29F7A61621695D9E00417BAF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		29F7A618216974F600417BAF /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		29F7A61A21697B6200417BAF /* RandomNumberResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberResponseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				29F7A5FC21691C8700417BAF /* RandomNumberFetcher.swift */,
+				29F7A61A21697B6200417BAF /* RandomNumberResponseTests.swift */,
 				29F7A5F62168E5D000417BAF /* RandomNumberFetcherTests.swift */,
 			);
 			path = RandomNumberFetcher;
@@ -284,6 +287,7 @@
 				290E732E2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift in Sources */,
 				29CFF4AD21641E7500A277AB /* MathCalculatorTests.swift in Sources */,
 				29F7A61521693F1200417BAF /* ViewModelTests.swift in Sources */,
+				29F7A61B21697B6200417BAF /* RandomNumberResponseTests.swift in Sources */,
 				290E733B2157C94800EF9408 /* TestingAppDelegate.swift in Sources */,
 				29F7A6102169323F00417BAF /* StoryPointsCalculatorTests.swift in Sources */,
 				29F7A60A2169306700417BAF /* RandomNumberFetcherTests.swift in Sources */,

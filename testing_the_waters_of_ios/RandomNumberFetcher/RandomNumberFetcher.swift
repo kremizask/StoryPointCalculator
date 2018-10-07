@@ -43,7 +43,10 @@ class RandomNumberFetcher: RandomNumberFetcherProtocol {
     
     struct Response: Codable {
         struct Result: Codable {
-            let numbers: [Int]
+            struct Random: Codable {
+                let data: [Int]
+            }
+            let random: Random
         }
         
         let result: Result
@@ -74,7 +77,7 @@ class RandomNumberFetcher: RandomNumberFetcherProtocol {
                 let responseData = data,
                 let response = try? JSONDecoder()
                     .decode(Response.self, from: responseData),
-                let number = response.result.numbers.first
+                let number = response.result.random.data.first
             else {
                 completion(nil, RandomNumberFetcher.genericError)
                 return

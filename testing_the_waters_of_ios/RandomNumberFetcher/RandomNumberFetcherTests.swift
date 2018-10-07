@@ -97,7 +97,7 @@ class RandomNumberFetcherTests: XCTestCase {
     func testTheResponseNumberInTheCallback() {
         
         // Arrange
-        let response = RandomNumberFetcher.Response(result: .init(numbers: [2]))
+        let response = RandomNumberFetcher.Response(result: .init(random: .init(data: [2])))
         let responseData = try? JSONEncoder().encode(response)
         let httpClient = HttpClientFake(response: responseData)
         let sut = RandomNumberFetcher(httpClient: httpClient)
