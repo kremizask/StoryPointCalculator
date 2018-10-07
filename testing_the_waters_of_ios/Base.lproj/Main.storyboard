@@ -19,11 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hi-4A-hxi">
-                                <rect key="frame" x="144.5" y="318.5" width="86" height="30"/>
-                                <state key="normal" title="feelin' lucky!"/>
+                                <rect key="frame" x="104" y="318.5" width="167" height="30"/>
+                                <state key="normal" title="gimme me the numbers!"/>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HDe-hy-rJh"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FC4-7w-pET">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaQ-P1-Q1s">
-                                <rect key="frame" x="10" y="86" width="355" height="20.5"/>
+                                <rect key="frame" x="20" y="86" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,15 +37,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Y24-kU-ag6" firstAttribute="trailing" secondItem="JaQ-P1-Q1s" secondAttribute="trailing" constant="10" id="CF4-6n-uW3"/>
+                            <constraint firstItem="Y24-kU-ag6" firstAttribute="trailing" secondItem="JaQ-P1-Q1s" secondAttribute="trailing" constant="20" id="CF4-6n-uW3"/>
                             <constraint firstItem="7hi-4A-hxi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eub-N1-xbC"/>
+                            <constraint firstItem="FC4-7w-pET" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ktq-Bu-IVt"/>
+                            <constraint firstItem="FC4-7w-pET" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Uuo-EZ-Bdx"/>
                             <constraint firstItem="7hi-4A-hxi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YlX-bh-Xmq"/>
                             <constraint firstItem="7hi-4A-hxi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JaQ-P1-Q1s" secondAttribute="bottom" constant="8" symbolic="YES" id="sVh-Fn-c0R"/>
                             <constraint firstItem="JaQ-P1-Q1s" firstAttribute="top" secondItem="Y24-kU-ag6" secondAttribute="top" constant="66" id="xAU-9f-eXv"/>
-                            <constraint firstItem="JaQ-P1-Q1s" firstAttribute="leading" secondItem="Y24-kU-ag6" secondAttribute="leading" constant="10" id="xJi-Rw-Faa"/>
+                            <constraint firstItem="JaQ-P1-Q1s" firstAttribute="leading" secondItem="Y24-kU-ag6" secondAttribute="leading" constant="20" id="xJi-Rw-Faa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y24-kU-ag6"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="FC4-7w-pET" id="pbJ-94-bqC"/>
+                        <outlet property="calculateButton" destination="7hi-4A-hxi" id="U96-nL-zc9"/>
+                        <outlet property="label" destination="JaQ-P1-Q1s" id="yvM-SA-n6y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

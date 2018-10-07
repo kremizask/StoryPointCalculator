@@ -12,9 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let viewModel = Dependencies.makeViewModel()
+        let viewController = window?.rootViewController as? ViewController
+        viewController?.configure(viewModel)
         return true
     }
 

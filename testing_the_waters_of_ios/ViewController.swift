@@ -9,12 +9,49 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var label: UILabel!
+    
+    
+    var viewModel: ViewModel!
+    
+    func configure(_ viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        bindViewModel()
     }
-
-
+    
+    private func bindViewModel() {
+        viewModel.isLoading { [weak self] (isLoading) in
+            DispatchQueue.main.async {
+                if isLoading {
+                    self?.activityIndicator.startAnimating()
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                }
+            }
+        }
+        
+        viewModel.isButtonEnabled { [weak self] (isEnabled) in
+            DispatchQueue.main.async {
+                self?.calculateButton.isEnabled = isEnabled
+            }
+        }
+        
+        viewModel.labelText { [weak self] (text) in
+            DispatchQueue.main.async {
+                self?.label.text = text
+            }
+        }
+    }
+    
+    @IBAction func calculateButtonTapped(_ sender: Any) {
+        viewModel.calculateButtonTapped()
+    }
 }
 

@@ -24,6 +24,7 @@
 		29F7A61221693E1B00417BAF /* StoryPointsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A61121693E1B00417BAF /* StoryPointsCalculator.swift */; };
 		29F7A61521693F1200417BAF /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A61421693F1200417BAF /* ViewModelTests.swift */; };
 		29F7A61721695D9E00417BAF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A61621695D9E00417BAF /* ViewModel.swift */; };
+		29F7A619216974F600417BAF /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7A618216974F600417BAF /* Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		29F7A61121693E1B00417BAF /* StoryPointsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPointsCalculator.swift; sourceTree = "<group>"; };
 		29F7A61421693F1200417BAF /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		29F7A61621695D9E00417BAF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		29F7A618216974F600417BAF /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				290E733C2157CD9200EF9408 /* main.swift */,
 				290E73182157BD7A00EF9408 /* AppDelegate.swift */,
+				29F7A618216974F600417BAF /* Dependencies.swift */,
 				290E731A2157BD7A00EF9408 /* ViewController.swift */,
 				29F7A5FE21692E0900417BAF /* HttpClient.swift */,
 				29F7A61321693E7600417BAF /* ViewModel */,
@@ -265,6 +268,7 @@
 				29F7A5FF21692E0900417BAF /* HttpClient.swift in Sources */,
 				290E731B2157BD7A00EF9408 /* ViewController.swift in Sources */,
 				290E73192157BD7A00EF9408 /* AppDelegate.swift in Sources */,
+				29F7A619216974F600417BAF /* Dependencies.swift in Sources */,
 				29F7A60D216930AB00417BAF /* MathCalculator.swift in Sources */,
 				290E733D2157CD9200EF9408 /* main.swift in Sources */,
 				29F7A61221693E1B00417BAF /* StoryPointsCalculator.swift in Sources */,
