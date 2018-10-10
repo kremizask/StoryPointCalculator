@@ -75,8 +75,9 @@ class RandomNumberFetcherTests: XCTestCase {
             "method":"generateIntegers",
             "params":{
                 "apiKey":"ec06126f-4d95-4757-abcb-74eebc65fcdb",
-                "n":1,"min":1,
-                "max":10,
+                "n":1,
+                "min":0,
+                "max":8,
                 "replacement":true,
                 "base":10
             },

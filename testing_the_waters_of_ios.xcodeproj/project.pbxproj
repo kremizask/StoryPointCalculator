@@ -105,16 +105,16 @@
 		290E73172157BD7A00EF9408 /* testing_the_waters_of_ios */ = {
 			isa = PBXGroup;
 			children = (
-				290E733C2157CD9200EF9408 /* main.swift */,
-				290E73182157BD7A00EF9408 /* AppDelegate.swift */,
-				29F7A618216974F600417BAF /* Dependencies.swift */,
 				2979C02A216A1D4800230000 /* ViewController */,
-				29F7A5FE21692E0900417BAF /* HttpClient.swift */,
 				29F7A61321693E7600417BAF /* ViewModel */,
 				29F7A60E2169321100417BAF /* StoryPointsCalculator */,
 				29F7A60B2169307E00417BAF /* MathCalculator */,
 				29F7A6082169302F00417BAF /* RandomNumberFetcher */,
+				29F7A618216974F600417BAF /* Dependencies.swift */,
+				29F7A5FE21692E0900417BAF /* HttpClient.swift */,
+				290E73182157BD7A00EF9408 /* AppDelegate.swift */,
 				290E731C2157BD7A00EF9408 /* Main.storyboard */,
+				290E733C2157CD9200EF9408 /* main.swift */,
 				290E731F2157BD7A00EF9408 /* Assets.xcassets */,
 				290E73212157BD7A00EF9408 /* LaunchScreen.storyboard */,
 				290E73242157BD7A00EF9408 /* Info.plist */,

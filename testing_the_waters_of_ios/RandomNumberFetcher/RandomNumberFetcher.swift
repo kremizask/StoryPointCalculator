@@ -65,8 +65,8 @@ class RandomNumberFetcher: RandomNumberFetcherProtocol {
                                id: id,
                                params: .init(apiKey: apiKey,
                                              n: 1,
-                                             min: 1,
-                                             max: 10,
+                                             min: 0,
+                                             max: 8,
                                              replacement: true,
                                              base: 10))
         
