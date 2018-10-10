@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  testing_the_waters_of_ios
+//  story_point_calc
 //
 //  Created by Kostas Kremizas on 23/09/2018.
 //  Copyright © 2018 kremizas. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let testTarget = "testing_the_waters_of_iosTests"
+let testTarget = "story_point_calcTests"
 let appDelegateClass: AnyClass = NSClassFromString("\(testTarget).TestingAppDelegate") ?? AppDelegate.self
 
 let appDelegateClassString = NSStringFromClass(appDelegateClass)

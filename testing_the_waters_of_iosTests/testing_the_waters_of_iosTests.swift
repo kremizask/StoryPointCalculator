@@ -1,15 +1,15 @@
 //
-//  testing_the_waters_of_iosTests.swift
-//  testing_the_waters_of_iosTests
+//  story_point_calcTests.swift
+//  story_point_calcTests
 //
 //  Created by Kostas Kremizas on 23/09/2018.
 //  Copyright © 2018 kremizas. All rights reserved.
 //
 
 import XCTest
-@testable import testing_the_waters_of_ios
+@testable import story_point_calc
 
-class testing_the_waters_of_iosTests: XCTestCase {
+class story_point_calcTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "290E73142157BD7A00EF9408"
-               BuildableName = "testing_the_waters_of_ios.app"
-               BlueprintName = "testing_the_waters_of_ios"
-               ReferencedContainer = "container:testing_the_waters_of_ios.xcodeproj">
+               BuildableName = "story_point_calc.app"
+               BlueprintName = "story_point_calc"
+               ReferencedContainer = "container:story_point_calc.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "290E73142157BD7A00EF9408"
-            BuildableName = "testing_the_waters_of_ios.app"
-            BlueprintName = "testing_the_waters_of_ios"
-            ReferencedContainer = "container:testing_the_waters_of_ios.xcodeproj">
+            BuildableName = "story_point_calc.app"
+            BlueprintName = "story_point_calc"
+            ReferencedContainer = "container:story_point_calc.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -46,9 +46,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "290E73282157BD7A00EF9408"
-               BuildableName = "testing_the_waters_of_iosTests.xctest"
-               BlueprintName = "testing_the_waters_of_iosTests"
-               ReferencedContainer = "container:testing_the_waters_of_ios.xcodeproj">
+               BuildableName = "story_point_calcTests.xctest"
+               BlueprintName = "story_point_calcTests"
+               ReferencedContainer = "container:story_point_calc.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "290E73142157BD7A00EF9408"
-            BuildableName = "testing_the_waters_of_ios.app"
-            BlueprintName = "testing_the_waters_of_ios"
-            ReferencedContainer = "container:testing_the_waters_of_ios.xcodeproj">
+            BuildableName = "story_point_calc.app"
+            BlueprintName = "story_point_calc"
+            ReferencedContainer = "container:story_point_calc.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "290E73142157BD7A00EF9408"
-            BuildableName = "testing_the_waters_of_ios.app"
-            BlueprintName = "testing_the_waters_of_ios"
-            ReferencedContainer = "container:testing_the_waters_of_ios.xcodeproj">
+            BuildableName = "story_point_calc.app"
+            BlueprintName = "story_point_calc"
+            ReferencedContainer = "container:story_point_calc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -101,9 +101,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "290E73142157BD7A00EF9408"
-            BuildableName = "testing_the_waters_of_ios.app"
-            BlueprintName = "testing_the_waters_of_ios"
-            ReferencedContainer = "container:testing_the_waters_of_ios.xcodeproj">
+            BuildableName = "story_point_calc.app"
+            BlueprintName = "story_point_calc"
+            ReferencedContainer = "container:story_point_calc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

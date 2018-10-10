@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:testing_the_waters_of_ios.xcodeproj">
+      location = "self:/Users/kostaskremizas/Desktop/testing_the_waters_of_ios/story_point_calc.xcodeproj">
    </FileRef>
 </Workspace>

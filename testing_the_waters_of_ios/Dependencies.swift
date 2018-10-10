@@ -1,6 +1,6 @@
 //
 //  Dependencies.swift
-//  testing_the_waters_of_ios
+//  story_point_calc
 //
 //  Created by Kostas Kremizas on 07/10/2018.
 //  Copyright © 2018 kremizas. All rights reserved.

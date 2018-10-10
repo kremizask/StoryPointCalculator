@@ -40,14 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		290E73152157BD7A00EF9408 /* testing_the_waters_of_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testing_the_waters_of_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		290E73152157BD7A00EF9408 /* story_point_calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = story_point_calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		290E73182157BD7A00EF9408 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		290E731A2157BD7A00EF9408 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		290E731D2157BD7A00EF9408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		290E731F2157BD7A00EF9408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		290E73222157BD7A00EF9408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		290E73242157BD7A00EF9408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		290E73292157BD7A00EF9408 /* testing_the_waters_of_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testing_the_waters_of_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		290E73292157BD7A00EF9408 /* story_point_calcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = story_point_calcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		290E732D2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testing_the_waters_of_iosTests.swift; sourceTree = "<group>"; };
 		290E732F2157BD7A00EF9408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		290E733A2157C94800EF9408 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		290E73162157BD7A00EF9408 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				290E73152157BD7A00EF9408 /* testing_the_waters_of_ios.app */,
-				290E73292157BD7A00EF9408 /* testing_the_waters_of_iosTests.xctest */,
+				290E73152157BD7A00EF9408 /* story_point_calc.app */,
+				290E73292157BD7A00EF9408 /* story_point_calcTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		290E73142157BD7A00EF9408 /* testing_the_waters_of_ios */ = {
+		290E73142157BD7A00EF9408 /* story_point_calc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 290E73322157BD7A00EF9408 /* Build configuration list for PBXNativeTarget "testing_the_waters_of_ios" */;
+			buildConfigurationList = 290E73322157BD7A00EF9408 /* Build configuration list for PBXNativeTarget "story_point_calc" */;
 			buildPhases = (
 				290E73112157BD7A00EF9408 /* Sources */,
 				290E73122157BD7A00EF9408 /* Frameworks */,
@@ -193,14 +193,14 @@
 			);
 			dependencies = (
 			);
-			name = testing_the_waters_of_ios;
+			name = story_point_calc;
 			productName = testing_the_waters_of_ios;
-			productReference = 290E73152157BD7A00EF9408 /* testing_the_waters_of_ios.app */;
+			productReference = 290E73152157BD7A00EF9408 /* story_point_calc.app */;
 			productType = "com.apple.product-type.application";
 		};
-		290E73282157BD7A00EF9408 /* testing_the_waters_of_iosTests */ = {
+		290E73282157BD7A00EF9408 /* story_point_calcTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 290E73352157BD7A00EF9408 /* Build configuration list for PBXNativeTarget "testing_the_waters_of_iosTests" */;
+			buildConfigurationList = 290E73352157BD7A00EF9408 /* Build configuration list for PBXNativeTarget "story_point_calcTests" */;
 			buildPhases = (
 				290E73252157BD7A00EF9408 /* Sources */,
 				290E73262157BD7A00EF9408 /* Frameworks */,
@@ -211,9 +211,9 @@
 			dependencies = (
 				290E732B2157BD7A00EF9408 /* PBXTargetDependency */,
 			);
-			name = testing_the_waters_of_iosTests;
+			name = story_point_calcTests;
 			productName = testing_the_waters_of_iosTests;
-			productReference = 290E73292157BD7A00EF9408 /* testing_the_waters_of_iosTests.xctest */;
+			productReference = 290E73292157BD7A00EF9408 /* story_point_calcTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -235,7 +235,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 290E73102157BD7A00EF9408 /* Build configuration list for PBXProject "testing_the_waters_of_ios" */;
+			buildConfigurationList = 290E73102157BD7A00EF9408 /* Build configuration list for PBXProject "story_point_calc" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -248,8 +248,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				290E73142157BD7A00EF9408 /* testing_the_waters_of_ios */,
-				290E73282157BD7A00EF9408 /* testing_the_waters_of_iosTests */,
+				290E73142157BD7A00EF9408 /* story_point_calc */,
+				290E73282157BD7A00EF9408 /* story_point_calcTests */,
 			);
 		};
 /* End PBXProject section */
@@ -311,7 +311,7 @@
 /* Begin PBXTargetDependency section */
 		290E732B2157BD7A00EF9408 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 290E73142157BD7A00EF9408 /* testing_the_waters_of_ios */;
+			target = 290E73142157BD7A00EF9408 /* story_point_calc */;
 			targetProxy = 290E732A2157BD7A00EF9408 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -505,7 +505,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testing_the_waters_of_ios.app/testing_the_waters_of_ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/story_point_calc.app/story_point_calc";
 			};
 			name = Debug;
 		};
@@ -526,14 +526,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testing_the_waters_of_ios.app/testing_the_waters_of_ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/story_point_calc.app/story_point_calc";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		290E73102157BD7A00EF9408 /* Build configuration list for PBXProject "testing_the_waters_of_ios" */ = {
+		290E73102157BD7A00EF9408 /* Build configuration list for PBXProject "story_point_calc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				290E73302157BD7A00EF9408 /* Debug */,
@@ -542,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		290E73322157BD7A00EF9408 /* Build configuration list for PBXNativeTarget "testing_the_waters_of_ios" */ = {
+		290E73322157BD7A00EF9408 /* Build configuration list for PBXNativeTarget "story_point_calc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				290E73332157BD7A00EF9408 /* Debug */,
@@ -551,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		290E73352157BD7A00EF9408 /* Build configuration list for PBXNativeTarget "testing_the_waters_of_iosTests" */ = {
+		290E73352157BD7A00EF9408 /* Build configuration list for PBXNativeTarget "story_point_calcTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				290E73362157BD7A00EF9408 /* Debug */,
