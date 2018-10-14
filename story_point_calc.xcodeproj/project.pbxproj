@@ -12,7 +12,6 @@
 		290E731E2157BD7A00EF9408 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 290E731C2157BD7A00EF9408 /* Main.storyboard */; };
 		290E73202157BD7A00EF9408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 290E731F2157BD7A00EF9408 /* Assets.xcassets */; };
 		290E73232157BD7A00EF9408 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 290E73212157BD7A00EF9408 /* LaunchScreen.storyboard */; };
-		290E732E2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E732D2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift */; };
 		290E733B2157C94800EF9408 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E733A2157C94800EF9408 /* TestingAppDelegate.swift */; };
 		290E733D2157CD9200EF9408 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E733C2157CD9200EF9408 /* main.swift */; };
 		29CFF4AD21641E7500A277AB /* MathCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CFF4AC21641E7500A277AB /* MathCalculatorTests.swift */; };
@@ -35,7 +34,7 @@
 			containerPortal = 290E730D2157BD7A00EF9408 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 290E73142157BD7A00EF9408;
-			remoteInfo = testing_the_waters_of_ios;
+			remoteInfo = story_point_calc;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -48,7 +47,6 @@
 		290E73222157BD7A00EF9408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		290E73242157BD7A00EF9408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		290E73292157BD7A00EF9408 /* story_point_calcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = story_point_calcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		290E732D2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testing_the_waters_of_iosTests.swift; sourceTree = "<group>"; };
 		290E732F2157BD7A00EF9408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		290E733A2157C94800EF9408 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		290E733C2157CD9200EF9408 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -87,8 +85,8 @@
 		290E730C2157BD7A00EF9408 = {
 			isa = PBXGroup;
 			children = (
-				290E73172157BD7A00EF9408 /* testing_the_waters_of_ios */,
-				290E732C2157BD7A00EF9408 /* testing_the_waters_of_iosTests */,
+				290E73172157BD7A00EF9408 /* story_point_calc */,
+				290E732C2157BD7A00EF9408 /* story_point_calcTests */,
 				290E73162157BD7A00EF9408 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,7 +100,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		290E73172157BD7A00EF9408 /* testing_the_waters_of_ios */ = {
+		290E73172157BD7A00EF9408 /* story_point_calc */ = {
 			isa = PBXGroup;
 			children = (
 				2979C02A216A1D4800230000 /* ViewController */,
@@ -119,17 +117,16 @@
 				290E73212157BD7A00EF9408 /* LaunchScreen.storyboard */,
 				290E73242157BD7A00EF9408 /* Info.plist */,
 			);
-			path = testing_the_waters_of_ios;
+			path = story_point_calc;
 			sourceTree = "<group>";
 		};
-		290E732C2157BD7A00EF9408 /* testing_the_waters_of_iosTests */ = {
+		290E732C2157BD7A00EF9408 /* story_point_calcTests */ = {
 			isa = PBXGroup;
 			children = (
-				290E732D2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift */,
 				290E732F2157BD7A00EF9408 /* Info.plist */,
 				290E733A2157C94800EF9408 /* TestingAppDelegate.swift */,
 			);
-			path = testing_the_waters_of_iosTests;
+			path = story_point_calcTests;
 			sourceTree = "<group>";
 		};
 		2979C02A216A1D4800230000 /* ViewController */ = {
@@ -194,7 +191,7 @@
 			dependencies = (
 			);
 			name = story_point_calc;
-			productName = testing_the_waters_of_ios;
+			productName = story_point_calc;
 			productReference = 290E73152157BD7A00EF9408 /* story_point_calc.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -212,7 +209,7 @@
 				290E732B2157BD7A00EF9408 /* PBXTargetDependency */,
 			);
 			name = story_point_calcTests;
-			productName = testing_the_waters_of_iosTests;
+			productName = story_point_calcTests;
 			productReference = 290E73292157BD7A00EF9408 /* story_point_calcTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -295,7 +292,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				290E732E2157BD7A00EF9408 /* testing_the_waters_of_iosTests.swift in Sources */,
 				29CFF4AD21641E7500A277AB /* MathCalculatorTests.swift in Sources */,
 				29F7A61521693F1200417BAF /* ViewModelTests.swift in Sources */,
 				29F7A61B21697B6200417BAF /* RandomNumberResponseTests.swift in Sources */,
@@ -387,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -442,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -458,12 +454,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53E3S9DPS;
-				INFOPLIST_FILE = testing_the_waters_of_ios/Info.plist;
+				INFOPLIST_FILE = story_point_calc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kremizas.testing-the-waters-of-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "kremizas.story-point-calc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,12 +473,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53E3S9DPS;
-				INFOPLIST_FILE = testing_the_waters_of_ios/Info.plist;
+				INFOPLIST_FILE = story_point_calc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kremizas.testing-the-waters-of-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "kremizas.story-point-calc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -495,7 +493,8 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53E3S9DPS;
-				INFOPLIST_FILE = testing_the_waters_of_iosTests/Info.plist;
+				INFOPLIST_FILE = story_point_calcTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -516,7 +515,8 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53E3S9DPS;
-				INFOPLIST_FILE = testing_the_waters_of_iosTests/Info.plist;
+				INFOPLIST_FILE = story_point_calcTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
