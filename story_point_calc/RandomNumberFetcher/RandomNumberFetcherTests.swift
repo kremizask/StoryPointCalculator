@@ -9,7 +9,7 @@
 import XCTest
 @testable import story_point_calc
 
-class HttpClientFake: HttpClient {
+class HttpClientSpy: HttpClient {
     
     class URLSessionDataTaskSpy: URLSessionDataTask {
         var resumeCalled = false
@@ -51,7 +51,7 @@ class RandomNumberFetcherTests: XCTestCase {
 
     func testFetchRequestsADataTaskAndResumesIt() {
         // Arrange
-        let httpClientSpy = HttpClientFake()
+        let httpClientSpy = HttpClientSpy()
         let sut = RandomNumberFetcher(httpClient: httpClientSpy)
         
         var firstRequest: URLRequest? {
@@ -100,7 +100,7 @@ class RandomNumberFetcherTests: XCTestCase {
         // Arrange
         let response = RandomNumberFetcher.Response(result: .init(random: .init(data: [2])))
         let responseData = try? JSONEncoder().encode(response)
-        let httpClient = HttpClientFake(response: responseData)
+        let httpClient = HttpClientSpy(response: responseData)
         let sut = RandomNumberFetcher(httpClient: httpClient)
         
         // Act

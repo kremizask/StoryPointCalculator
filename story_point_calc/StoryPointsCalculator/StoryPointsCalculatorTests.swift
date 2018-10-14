@@ -14,7 +14,7 @@ class StoryPointsCalculatorTests: XCTestCase {
         
         // Arrange
         
-        let randomFetcher = RandomFetcherFake(result: 5)
+        let randomFetcher = RandomFetcherSpy(result: 5)
         let sut = StoryPointsCalculator(randomFetcher)
         
         // Act
@@ -32,7 +32,7 @@ class StoryPointsCalculatorTests: XCTestCase {
     }
 }
 
-class RandomFetcherFake: RandomNumberFetcherProtocol {
+class RandomFetcherSpy: RandomNumberFetcherProtocol {
     let result: Int
     var numberRequested = false
     

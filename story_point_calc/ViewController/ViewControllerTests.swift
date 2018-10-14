@@ -9,7 +9,7 @@
 import XCTest
 @testable import story_point_calc
 
-class ViewModelFake: ViewModelProtocol {
+class ViewModelSpy: ViewModelProtocol {
     var calculateButtonTappedCalled = false
     
     func calculateButtonTapped() {
@@ -32,12 +32,12 @@ class ViewModelFake: ViewModelProtocol {
 class ViewControllerTests: XCTestCase {
     
     var sut: ViewController!
-    var viewModel: ViewModelFake!
+    var viewModel: ViewModelSpy!
     
     override func setUp() {
         super.setUp()
         
-        viewModel = ViewModelFake()
+        viewModel = ViewModelSpy()
         sut = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? ViewController
         sut.configure(viewModel)
         

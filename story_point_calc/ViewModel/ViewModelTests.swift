@@ -13,7 +13,7 @@ class ViewModelTests: XCTestCase {
     
     func testCalculateButtonTapRequestsPointCalculation() {
         // Arrange
-        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: 3)
+        let storyPointCalc = SynchronousStoryPointsCalculatorSpy(storyPoints: 3)
         let sut = ViewModel(storyPointCalc)
         
         // Act
@@ -25,7 +25,7 @@ class ViewModelTests: XCTestCase {
     
     func testTheDefaultLabelCopy() {
         // Arrange
-        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: 3)
+        let storyPointCalc = SynchronousStoryPointsCalculatorSpy(storyPoints: 3)
         let sut = ViewModel(storyPointCalc)
         var labelText = ""
         
@@ -43,7 +43,7 @@ class ViewModelTests: XCTestCase {
     
     func testTheLabelCopyAfterTheCalculationForZeroPoints() {
         // Arrange
-        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: 0)
+        let storyPointCalc = SynchronousStoryPointsCalculatorSpy(storyPoints: 0)
         let sut = ViewModel(storyPointCalc)
         var labelText = ""
         
@@ -81,7 +81,7 @@ class ViewModelTests: XCTestCase {
     
     func testTheTextOnError() {
         // Arrange
-        let sut = ViewModel(ErroringStoryPointsCalculator())
+        let sut = ViewModel(ErroringStoryPointsCalculatorStub())
         var labelText = ""
         var expectation = self.expectation(description: "getting initial text")
         sut.labelText { (text) in
@@ -129,7 +129,7 @@ class ViewModelTests: XCTestCase {
     
     private func assertTextIsCorrectForEasyStories(expectedPoints: Int, file: StaticString = #file, line: UInt = #line) {
         // Arrange
-        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: expectedPoints)
+        let storyPointCalc = SynchronousStoryPointsCalculatorSpy(storyPoints: expectedPoints)
         let sut = ViewModel(storyPointCalc)
         var labelText = ""
         
@@ -154,7 +154,7 @@ class ViewModelTests: XCTestCase {
     
     private func assertTextIsCorrectForBigStories(expectedPoints: Int, file: StaticString = #file, line: UInt = #line) {
         // Arrange
-        let storyPointCalc = SynchronousStoryPointsCalculatorFake(storyPoints: expectedPoints)
+        let storyPointCalc = SynchronousStoryPointsCalculatorSpy(storyPoints: expectedPoints)
         let sut = ViewModel(storyPointCalc)
         var labelText = ""
         
@@ -176,8 +176,8 @@ class ViewModelTests: XCTestCase {
         XCTAssertEqual(labelText, "Wow! I think it's a \(expectedPoints)! Maybe we should break this down into more stories?", file: file, line: line)
     }
     
-    private func assertButtonIsDisabledOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorFake) -> Void) {
-        let calculator = AsynchronousStoryPointsCalculatorFake()
+    private func assertButtonIsDisabledOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorSpy) -> Void) {
+        let calculator = AsynchronousStoryPointsCalculatorSpy()
         
         // Injecting serial queue in order to be able to make
         // async code sync for our tests
@@ -214,9 +214,9 @@ class ViewModelTests: XCTestCase {
         XCTAssertTrue(isButtonEnabled)
     }
     
-    private func assertIsLoadingOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorFake) -> Void) {
+    private func assertIsLoadingOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorSpy) -> Void) {
         // Arrange
-        let asyncCalculator = AsynchronousStoryPointsCalculatorFake()
+        let asyncCalculator = AsynchronousStoryPointsCalculatorSpy()
         let queue = DispatchQueue(label: "isLoading")
         let sut = ViewModel(asyncCalculator, queue)
         var isLoading: Bool = false
@@ -246,7 +246,7 @@ class ViewModelTests: XCTestCase {
 
 }
 
-class SynchronousStoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
+class SynchronousStoryPointsCalculatorSpy: StoryPointsCalculatorProtocol {
     private let storyPoints: Int
     
     public init(storyPoints: Int) {
@@ -261,7 +261,7 @@ class SynchronousStoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
     }
 }
 
-class AsynchronousStoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
+class AsynchronousStoryPointsCalculatorSpy: StoryPointsCalculatorProtocol {
     
     var requestedCalculationCompletion: ((Int?, Error?) -> Void)?
     
@@ -278,7 +278,7 @@ class AsynchronousStoryPointsCalculatorFake: StoryPointsCalculatorProtocol {
     }
 }
 
-class ErroringStoryPointsCalculator: StoryPointsCalculatorProtocol {
+class ErroringStoryPointsCalculatorStub: StoryPointsCalculatorProtocol {
     func calculate(completion: @escaping (Int?, Error?) -> Void) {
         completion(nil, RandomNumberFetcher.genericError)
     }
