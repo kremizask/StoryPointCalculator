@@ -1,6 +1,6 @@
 # StoryPointCalculator
 
-Demo app created for the needs of the ['Testing the waters of iOS' presentation](https://speakerdeck.com/kremizask/testing-the-waters-of-ios)
+Demo app created for the needs of the ['Testing the waters of iOS' presentation](https://www.slideshare.net/kremizask/testing-the-waters-of-ios)
 
 StoryPointCalculator uses a fresh, novel and utterly silly way to solve the impossibly hard problem of engineering estimations. 
 1. It makes a call to the [random.org API](https://api.random.org/json-rpc/1/) and fetches a truly random number between 0 and 8.
