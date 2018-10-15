@@ -9,12 +9,12 @@ StoryPointCalculator uses a fresh, novel and utterly silly way to solve the impo
 
 ## Points of interest
 1. Project structure: Placing test code next to it's corresponding production file. More about the reasoning [here](https://qualitycoding.org/rearrange-project-test-code/)
-2. [Mocking HTTP calls](RandomNumberFetcher/RandomNumberFetcherTests.swift)
+2. [Mocking HTTP calls](story_point_calc/RandomNumberFetcher/RandomNumberFetcherTests.swift)
 3. [Performance tests](https://github.com/kremizask/StoryPointCalculator/blob/master/story_point_calc/MathCalculator/MathCalculatorTests.swift#L66-L70)
 4. Testing asynchronous code 
     - [with expectations](https://github.com/kremizask/StoryPointCalculator/blob/master/story_point_calc/ViewModel/ViewModelTests.swift#L26-L42)
     - [with dispatch queues](https://github.com/kremizask/StoryPointCalculator/blob/master/story_point_calc/ViewModel/ViewModelTests.swift#L179-L215)
-    - [by making it synchronous](RandomNumberFetcher/RandomNumberFetcherTests.swift)
+    - [by making it synchronous](story_point_calc/RandomNumberFetcher/RandomNumberFetcherTests.swift)
 6. Switching your AppDelegate for testing: [here](https://github.com/kremizask/StoryPointCalculator/commit/87b9d65228189c641ffd2a03d78bbcda5bb26467) and [here](https://github.com/kremizask/StoryPointCalculator/commit/e07ac8d6e24223ad69b4e3d3f16b6e6422910bf3). More about the reasoning [here](https://qualitycoding.org/ios-app-delegate-testing/)
 7. [Testing @IBOutlets / @IBActions](https://github.com/kremizask/StoryPointCalculator/blob/master/story_point_calc/ViewController/ViewControllerTests.swift#L56)
 8. [Extracting custom assertions](https://github.com/kremizask/StoryPointCalculator/blob/master/story_point_calc/ViewModel/ViewModelTests.swift#L130-L153)
