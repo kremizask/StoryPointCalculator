@@ -173,7 +173,7 @@ class ViewModelTests: XCTestCase {
         
         waitForExpectations(timeout: 1, handler: nil)
         
-        XCTAssertEqual(labelText, "Wow! I think it's a \(expectedPoints)! Maybe we should break this down into more stories?", file: file, line: line)
+        XCTAssertEqual(labelText, "Wow! I think it's \(expectedPoints) points! Maybe we should break this down into more stories?", file: file, line: line)
     }
     
     private func assertButtonIsDisabledOnlyWhileLoading(resolveAction: (AsynchronousStoryPointsCalculatorSpy) -> Void) {
