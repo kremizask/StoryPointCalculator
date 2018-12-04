@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode10.1
+xcode_project: story_point_calc.xcodeproj # path to your xcodeproj folder
+xcode_scheme: story_point_calc
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
